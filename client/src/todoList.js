@@ -6,11 +6,11 @@ export class TodoList extends React.Component {
         this.remove = this.remove.bind(this);
         this.done = this.done.bind(this);
         this.changeList = this.changeList.bind(this);
-        this.state = { activeList: 'All' };
+        this.state = { activeList: '全て' };
     }
 
-    componentDidUpdate() {
-        this.scrollToBottom();
+    componentUpdate() {
+        this.scrollToBottom()
     }
 
     remove(e) {
@@ -34,6 +34,7 @@ export class TodoList extends React.Component {
             li[i].classList.remove('active');
         }
         var activeLi = e.target.parentNode;
+        console.log(activeLi.innerText)
         activeLi.classList.add('active');
         this.setState({ activeList: activeLi.innerText });
     }
@@ -66,7 +67,7 @@ export class TodoList extends React.Component {
             <div>
                 <div id="todoList" className="todo-list type1"
                     style={{
-                        height: 300,
+                        height: 290,
                         overflowY: 'scroll',
                     }}>
                     <ul>

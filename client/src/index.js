@@ -24,7 +24,7 @@ class TodoApp extends React.Component {
     }
 
     componentWillMount() {
-        this.refreshTasks();
+        this.refreshTasks()
     }
 
     refreshTasks() {
@@ -115,7 +115,7 @@ class TodoApp extends React.Component {
                     }),
                     setTimeout(() => {
                         this.refreshTasks()
-                    }, 100)
+                    }, 1000)
                 )
         } else {
             alert('何もない')
@@ -238,11 +238,11 @@ class TodoApp extends React.Component {
             });
     }
 
-    updateLocalStorage(updatedList) {
-        var updatedList = JSON.stringify(updatedList);
-        localStorage.setItem('tasks', updatedList);
-        return true;
-    }
+    // updateLocalStorage(updatedList) {
+    //     var updatedList = JSON.stringify(updatedList);
+    //     localStorage.setItem('tasks', updatedList);
+    //     return true;
+    // }
 
     render() {
         let layout = (<Login doLogin={this.doLogin} />);
